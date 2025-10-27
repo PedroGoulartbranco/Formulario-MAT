@@ -20,17 +20,18 @@
 
                             <div class="mb-3">
                                 <label for="nome" class="form-label">{{ form.nome.label }}</label>
-                                <input type="text" class="form-control" id="nome" name="nome">
+                                <input type="text" class="form-control" id="nome" name="nome" value="">
                             </div>
 
                             <div class="mb-3">
                                 <label for="idade" class="form-label">{{ form.idade.label }}</label>
-                                <input type="number" class="form-control" id="idade" name="idade" required>
+                                <input type="number" class="form-control" id="idade" name="idade" value="">
                             </div>
 
                             <div class="mb-3">
                                 <label for="sexo" class="form-label">{{ form.sexo.label }}</label>
                                 <select class="form-select" id="sexo" name="sexo" required>
+                                    <option value="" selected disabled>Selecione...</option>
                                     <option value="0">Masculino</option>
                                     <option value="1">Feminino</option>
                                     <option value="2">Prefiro não dizer</option>
@@ -40,6 +41,7 @@
                             <div class="mb-3">
                                 <label for="q4" class="form-label">{{ form.q4.label }}</label>
                                 <select class="form-select" id="q4" name="q4" required>
+                                    <option value="" selected disabled>Selecione...</option>
                                     <option value="0">Sim, já sofri</option>
                                     <option value="1">Sim, já presenciei</option>
                                     <option value="2">Não</option>
@@ -49,6 +51,7 @@
                             <div class="mb-3">
                                 <label for="q5" class="form-label">{{ form.q5.label }}</label>
                                 <select class="form-select" id="q5" name="q5" required>
+                                    <option value="" selected disabled>Selecione...</option>
                                     <option value="0">Não</option>
                                     <option value="1">Sim</option>
                                 </select>
@@ -57,6 +60,7 @@
                             <div class="mb-3">
                                 <label for="q6" class="form-label">{{ form.q6.label }}</label>
                                 <select class="form-select" id="q6" name="q6" required>
+                                    <option value="" selected disabled>Selecione...</option>
                                     <option value="0">Sim, muito relevante</option>
                                     <option value="1">Sim, porém pouco relevante</option>
                                     <option value="2">Não</option>
@@ -66,6 +70,7 @@
                             <div class="mb-3">
                                 <label for="q7" class="form-label">{{ form.q7.label }}</label>
                                 <select class="form-select" id="q7" name="q7" required>
+                                    <option value="" selected disabled>Selecione...</option>
                                     <option value="0">Medo</option>
                                     <option value="1">Preconceito cultural</option>
                                     <option value="2">Caráter</option>
@@ -77,6 +82,7 @@
                             <div class="mb-3">
                                 <label for="q8" class="form-label">{{ form.q8.label }}</label>
                                 <select class="form-select" id="q8" name="q8" required>
+                                    <option value="" selected disabled>Selecione...</option>
                                     <option value="0">Não</option>
                                     <option value="1">Sim</option>
                                 </select>
@@ -85,6 +91,7 @@
                             <div class="mb-3">
                                 <label for="q9" class="form-label">{{ form.q9.label }}</label>
                                 <select class="form-select" id="q9" name="q9" required>
+                                    <option value="" selected disabled>Selecione...</option>
                                     <option value="0">Sim, acredito que as leis atuais sejam suficientes</option>
                                     <option value="1">Sim, porém acredito que ainda haja coisas para melhorar</option>
                                     <option value="2">Não, porém está no caminho certo</option>
@@ -95,6 +102,7 @@
                             <div class="mb-3">
                                 <label for="q10" class="form-label">{{ form.q10.label }}</label>
                                 <select class="form-select" id="q10" name="q10" required>
+                                    <option value="" selected disabled>Selecione...</option>
                                     <option value="0">Mídias (TV, jornais, internet)</option>
                                     <option value="1">Escolas</option>
                                     <option value="2">Ambientes profissionais</option>
@@ -104,6 +112,7 @@
                             <div class="mb-3">
                                 <label for="q11" class="form-label">{{ form.q11.label }}</label>
                                 <select class="form-select" id="q11" name="q11" required>
+                                    <option value="" selected disabled>Selecione...</option>
                                     <option value="0">Sim, acredito plenamente</option>
                                     <option value="1">Sim, porém não é o principal</option>
                                     <option value="2">Não</option>

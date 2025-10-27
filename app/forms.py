@@ -3,7 +3,7 @@ from wtforms import StringField, SubmitField, IntegerField, SelectField
 from wtforms.validators import DataRequired, NumberRange
 
 class MatForm(FlaskForm):
-    nome = StringField('Nome:')
+    nome = StringField('Nome: (opcional)')
     idade = IntegerField('Idade:', validators=[DataRequired(), NumberRange(min=1, max=100)])
     sexo = SelectField('Sexo:', choices=[(0, "Masculino"), 
                                         (1, "Feminino"), 
