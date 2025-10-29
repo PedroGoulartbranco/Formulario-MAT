@@ -40,7 +40,7 @@ def pagina_formulario():
 
     return render_template('formulario.html', form=form)
 
-@views_bp.route('/analise/')
+@views_bp.route('/analise/', methods=['GET'])
 def analise():
 
     df = pd.read_sql_table('dados', db.engine)
