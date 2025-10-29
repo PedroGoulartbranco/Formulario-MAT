@@ -20,4 +20,6 @@ app.config['SECRET_KEY'] = 'hfjsdsdksk!!dfhdksfhdjdhjks'
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
+db.create_all()
+
 from app.views import pagina_formulario
