@@ -15,84 +15,88 @@ class MatForm(FlaskForm):
 
     sexo = SelectField(
         'Sexo:',
-        choices=[(0, "Masculino"), (1, "Feminino"), (2, "Prefiro não dizer")],
+        choices=[("", "Selecione"), ("0", "Masculino"), ("1", "Feminino"), ("2", "Prefiro não dizer")],
         validators=[DataRequired()],
-        coerce=int
+        coerce=str
     )
 
     q4 = SelectField(
         'Já sofreu ou presenciou algum tipo de preconceito?',
-        choices=[(0, "Sim, já sofri"), (1, "Sim, já presenciei"), (2, "Não")],
+        choices=[("", "Selecione"), ("0", "Sim, já sofri"), ("1", "Sim, já presenciei"), ("2", "Não")],
         validators=[DataRequired()],
-        coerce=int
+        coerce=str
     )
 
     q5 = SelectField(
         'Você sabe o que é xenofobia?',
-        choices=[(0, "Não"), (1, "Sim")],
-        validators=[DataRequired(), NumberRange(min=0, max=1)],
-        coerce=int
+        choices=[("", "Selecione"), ("0", "Não"), ("1", "Sim")],
+        validators=[DataRequired()],
+        coerce=str
     )
 
     q6 = SelectField(
         'Na sua opinião, a xenofobia é um problema relevante no Brasil/mundo?',
-        choices=[(0, "Sim, muito relevante"), (1, "Sim, porém pouco relevante"), (2, "Não")],
+        choices=[("", "Selecione"), ("0", "Sim, muito relevante"), ("1", "Sim, porém pouco relevante"), ("2", "Não")],
         validators=[DataRequired()],
-        coerce=int
+        coerce=str
     )
 
     q7 = SelectField(
         'Você acredita que a xenofobia está relacionada a:',
         choices=[
-            (0, "Medo"),
-            (1, "Preconceito cultural"),
-            (2, "Caráter"),
-            (3, "Questões econômicas"),
-            (4, "Falta de conhecimento/educação")
+            ("", "Selecione"),
+            ("0", "Medo"),
+            ("1", "Preconceito cultural"),
+            ("2", "Caráter"),
+            ("3", "Questões econômicas"),
+            ("4", "Falta de conhecimento/educação")
         ],
-        validators=[DataRequired(), NumberRange(min=0, max=4)],
-        coerce=int
+        validators=[DataRequired()],
+        coerce=str
     )
 
     q8 = SelectField(
         'Você conhece alguém que sofreu ou sofre com a xenofobia?',
-        choices=[(0, "Não"), (1, "Sim")],
+        choices=[("", "Selecione"), ("0", "Não"), ("1", "Sim")],
         validators=[DataRequired()],
-        coerce=int
+        coerce=str
     )
 
     q9 = SelectField(
         'Você acredita que as punições atuais são suficientes?',
         choices=[
-            (0, "Sim, acredito que as leis atuais sejam suficientes"),
-            (1, "Sim, porém acredito que ainda haja coisas para melhorar"),
-            (2, "Não, porém está no caminho certo"),
-            (4, "Não, acredito que estamos longe de leis justas")
+            ("", "Selecione"),
+            ("0", "Sim, acredito que as leis atuais sejam suficientes"),
+            ("1", "Sim, porém acredito que ainda haja coisas para melhorar"),
+            ("2", "Não, porém está no caminho certo"),
+            ("4", "Não, acredito que estamos longe de leis justas")
         ],
         validators=[DataRequired()],
-        coerce=int
+        coerce=str
     )
 
     q10 = SelectField(
         'Onde você acredita que mais ocorrem casos de xenofobia?',
         choices=[
-            (0, "Mídias (TV, jornais, internet)"),
-            (1, "Escolas"),
-            (2, "Ambientes profissionais")
+            ("", "Selecione"),
+            ("0", "Mídias (TV, jornais, internet)"),
+            ("1", "Escolas"),
+            ("2", "Ambientes profissionais")
         ],
         validators=[DataRequired()],
-        coerce=int
+        coerce=str
     )
 
     q11 = SelectField(
         'Você acredita que a mídia (TV, jornais, internet) reforça estereótipos que alimentam a xenofobia?',
         choices=[
-            (0, "Sim, acredito plenamente"),
-            (1, "Sim, porém não é o principal"),
-            (2, "Não")
+            ("", "Selecione"),
+            ("0", "Sim, acredito plenamente"),
+            ("1", "Sim, porém não é o principal"),
+            ("2", "Não")
         ],
         validators=[DataRequired()],
-        coerce=int
+        coerce=str
     )
 
     btnSubmit = SubmitField('Enviar')

@@ -1,19 +1,23 @@
-from app import app, db
-from flask import render_template, session
+from . import db
+from flask import render_template, session, Blueprint
 from .forms import MatForm
 from .models import Dados
 
 import pandas as pd
 import plotly.express as px
 
-@app.route('/',  methods=['GET', 'POST'])
+views_bp = Blueprint('views', __name__)
+
+@views_bp.route('/',  methods=['GET', 'POST'])
 def pagina_formulario():
     form = MatForm()
 
     if session.get('respondido'):
         return render_template('respondido.html')
 
+   
     if form.validate_on_submit():
+        print(form.q4.data)
         session['respondido'] = True
         respostas = Dados(
             nome=form.nome.data,
@@ -36,7 +40,7 @@ def pagina_formulario():
 
     return render_template('formulario.html', form=form)
 
-@app.route('/analise/')
+@views_bp.route('/analise/')
 def analise():
 
     df = pd.read_sql_table('dados', db.engine)

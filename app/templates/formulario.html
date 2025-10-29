@@ -1,17 +1,73 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pesquisa sobre Xenofobia</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        .card {
+            background-color: #1e1e1e;
+            border: none;
+        }
+
+        .card-header {
+            background: linear-gradient(90deg, #0d6efd, #0a58ca);
+        }
+
+        .form-label {
+            color: #cfcfcf;
+        }
+
+        .form-control, .form-select {
+            background-color: #2b2b2b;
+            border-color: #444;
+            color: #e0e0e0;
+        }
+
+        .form-control:focus, .form-select:focus {
+            background-color: #2f2f2f;
+            border-color: #0d6efd;
+            box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+            color: #fff;
+        }
+
+        .btn-primary {
+            background-color: #0d6efd;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #0b5ed7;
+        }
+
+        .text-danger {
+            color: #ff6b6b !important;
+        }
+
+        .card-footer {
+            background-color: #1a1a1a;
+            color: #999;
+        }
+
+        /* Torna os selects mais legíveis */
+        option {
+            background-color: #1e1e1e;
+            color: #fff;
+        }
+    </style>
 </head>
-<body class="bg-light">
+<body>
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card shadow-lg border-0">
-                    <div class="card-header bg-primary text-white text-center">
+                <div class="card shadow-lg">
+                    <div class="card-header text-white text-center">
                         <h2 class="mb-0">Pesquisa sobre Xenofobia</h2>
                     </div>
                     <div class="card-body p-4">
@@ -45,77 +101,16 @@
                                 {% endfor %}
                             </div>
 
-                            <!-- q4 -->
-                            <div class="mb-3">
-                                {{ form.q4.label(class="form-label fw-semibold") }}
-                                {{ form.q4(class="form-select") }}
-                                {% for error in form.q4.errors %}
-                                    <div class="text-danger small">{{ error }}</div>
-                                {% endfor %}
-                            </div>
-
-                            <!-- q5 -->
-                            <div class="mb-3">
-                                {{ form.q5.label(class="form-label fw-semibold") }}
-                                {{ form.q5(class="form-select") }}
-                                {% for error in form.q5.errors %}
-                                    <div class="text-danger small">{{ error }}</div>
-                                {% endfor %}
-                            </div>
-
-                            <!-- q6 -->
-                            <div class="mb-3">
-                                {{ form.q6.label(class="form-label fw-semibold") }}
-                                {{ form.q6(class="form-select") }}
-                                {% for error in form.q6.errors %}
-                                    <div class="text-danger small">{{ error }}</div>
-                                {% endfor %}
-                            </div>
-
-                            <!-- q7 -->
-                            <div class="mb-3">
-                                {{ form.q7.label(class="form-label fw-semibold") }}
-                                {{ form.q7(class="form-select") }}
-                                {% for error in form.q7.errors %}
-                                    <div class="text-danger small">{{ error }}</div>
-                                {% endfor %}
-                            </div>
-
-                            <!-- q8 -->
-                            <div class="mb-3">
-                                {{ form.q8.label(class="form-label fw-semibold") }}
-                                {{ form.q8(class="form-select") }}
-                                {% for error in form.q8.errors %}
-                                    <div class="text-danger small">{{ error }}</div>
-                                {% endfor %}
-                            </div>
-
-                            <!-- q9 -->
-                            <div class="mb-3">
-                                {{ form.q9.label(class="form-label fw-semibold") }}
-                                {{ form.q9(class="form-select") }}
-                                {% for error in form.q9.errors %}
-                                    <div class="text-danger small">{{ error }}</div>
-                                {% endfor %}
-                            </div>
-
-                            <!-- q10 -->
-                            <div class="mb-3">
-                                {{ form.q10.label(class="form-label fw-semibold") }}
-                                {{ form.q10(class="form-select") }}
-                                {% for error in form.q10.errors %}
-                                    <div class="text-danger small">{{ error }}</div>
-                                {% endfor %}
-                            </div>
-
-                            <!-- q11 -->
-                            <div class="mb-4">
-                                {{ form.q11.label(class="form-label fw-semibold") }}
-                                {{ form.q11(class="form-select") }}
-                                {% for error in form.q11.errors %}
-                                    <div class="text-danger small">{{ error }}</div>
-                                {% endfor %}
-                            </div>
+                            <!-- Repetição das perguntas -->
+                            {% for q in [form.q4, form.q5, form.q6, form.q7, form.q8, form.q9, form.q10, form.q11] %}
+                                <div class="mb-3">
+                                    {{ q.label(class="form-label fw-semibold") }}
+                                    {{ q(class="form-select") }}
+                                    {% for error in q.errors %}
+                                        <div class="text-danger small">{{ error }}</div>
+                                    {% endfor %}
+                                </div>
+                            {% endfor %}
 
                             <!-- Botão -->
                             <div class="d-grid">
@@ -123,7 +118,7 @@
                             </div>
                         </form>
                     </div>
-                    <div class="card-footer text-center text-muted small">
+                    <div class="card-footer text-center small">
                         Obrigado por participar da nossa pesquisa!
                     </div>
                 </div>

@@ -25,7 +25,8 @@ def create_app():
     db.init_app(app)
     migrate.init_app(app, db)
     
-    from app.views import pagina_formulario
+    from app.views import views_bp
+    app.register_blueprint(views_bp)
 
     with app.app_context():
         db.create_all()

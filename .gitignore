@@ -1,0 +1,14 @@
+# Ignorar banco de dados SQLite
+database.db
+*.db
+
+# Ignorar migrações do ambiente virtual (se houver)
+venv/
+.env
+
+migrations/
+instance/
+
+# Ignorar cache do Python
+__pycache__/
+*.pyc
