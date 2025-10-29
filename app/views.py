@@ -47,7 +47,7 @@ def analise():
 
     info = {}
 
-    info['num_respostas'] = df.index[-1]
+    info['num_respostas'] = df.index[-1]+1
 
     graficos = {}
 
@@ -76,6 +76,6 @@ def analise():
     for q in ['q4', 'q5', 'q6', 'q7', 'q8', 'q9', 'q10', 'q11']:
         contagem = df[q].value_counts().reset_index()
         contagem.columns = ['Resposta', 'Quantidade']
-        graficos[q] = px.bar(data_frame=contagem, x='Resposta', y='Quantidade', tittle=titulos.get(q)).to_html(full_html=False)
+        graficos[q] = px.bar(data_frame=contagem, x='Resposta', y='Quantidade', title=titulos.get(q)).to_html(full_html=False)
 
     return render_template('analise.html', graficos=graficos, info=info)
